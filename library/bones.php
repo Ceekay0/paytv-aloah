@@ -279,6 +279,20 @@ function bones_footer_links_fallback() {
 	/* you can put a default here if you like */
 }
 
+// Twitter Bootstrap Menu
+
+function ceekay_nav_menu() {
+    wp_nav_menu( array(
+        'menu'       => 'top_menu',
+        'depth'      => 2,
+        'container'  => false,
+        'menu_class' => 'nav',
+        //Process nav menu using our custom nav walker
+        'walker' => new twitter_bootstrap_nav_walker())
+    );
+}
+
+
 /*********************
 RELATED POSTS FUNCTION
 *********************/

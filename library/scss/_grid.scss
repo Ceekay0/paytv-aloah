@@ -34,6 +34,8 @@ values are commented out on each line.
 .elevencol { width: 91.436464082%; }       /* 91.35%; } /* grid_11 */
 .twelvecol { width: 99.999999993%; }       /* 100%;   } /* grid_12 */
 
+$onecol: 5.801104972%;
+
 // layout & column defaults
 .onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol {
   position: relative;

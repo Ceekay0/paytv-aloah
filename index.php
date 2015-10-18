@@ -1,8 +1,34 @@
 <?php get_header(); ?>
 			
 			<div id="content">
-			
+
 				<div id="inner-content" class="wrap clearfix">
+
+									<!-- HERO THUMBS -->
+				<!-- <div id="hero-thumbs" class="ninecol clearfix"> -->
+					<?php $hero_query = new WP_Query( 'post_type=hero_thumb&posts_per_page=3'); $hero_i = 0; ?>
+					<?php while($hero_query->have_posts()): $hero_query->the_post(); ?>
+	  					<div class="hero-content threecol clearfix <?php $hero_i++ ;
+	  					/**	switch ($hero_i) {
+	  							case 1 :
+	  								echo 'last';
+	  								break;
+	  							case 2 :
+	  								echo '';
+	  								break;
+	  							case 3 : 
+	  								echo 'first';
+	  								break; } **/?>
+	  								">
+	  				<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+	  				<?php the_content();?>
+	  					<?php $key="url"; if (get_post_meta($post->ID, $key, true) != '') {; ?>
+	  					<a class="twitterbtn hero-more" href="<?php echo get_post_meta($post->ID, $key, true); ?>"><?php _e('Click here', 'bonestheme'); ?></a> 
+	  					<?php } ?>
+	  					</div>
+					<?php endwhile; ?>
+				<!-- </div> -->
+				<!-- HERO THUMBS END -->
 			
 				    <div id="main" class="eightcol last clearfix" role="main">
 
@@ -20,12 +46,21 @@
 						    </header> <!-- end article header -->
 					
 						    <section class="entry-content clearfix">
-							    <?php the_content(); ?>
+							    <?php the_content(''); ?>
 						    </section> <!-- end article section -->
 						
 						    <footer class="article-footer">
-    							<p class="tags"><?php the_tags('<span class="tags-title">' . __('Tags:', 'bonestheme') . '</span> ', ', ', ''); ?></p>
-
+    							<p class="tags clearfix"><?php the_tags('<span class="tags-title">' . __('Tags:', 'bonestheme') . '</span> ', ', ', ''); ?></p>
+    							
+    							<?php $pos = strpos($post->post_content, '<!--more-->'); 
+    								if($pos==''){ ?>
+    								<p class="comment-count clearfix"> <a class="comment-link" href="<?php the_permalink(); ?>#comments">
+    									<?php if(get_comments_number()>=1) comments_number( 'no responses', 'one response', '% responses' ); 
+    											// elseif('open' != $post->comment_status) _e('Comments Off','bonestheme'); 
+    											elseif(get_comments_number() == 0) _e('No Comments','bonestheme'); ?></a></p>
+    										<?php }
+    									else{ ?><p class="more clearfix"> <a class="more-link" title="<?php _e('Read more about','bonestheme'); ?> <?php the_title(); ?>" href="<?php the_permalink() ?>#more-<?php echo $id; ?>">
+    									<?php _e('Continue reading','bonestheme'); ?></a> </p><?php } ?>
 						    </footer> <!-- end article footer -->
 						    
 						    <?php // comments_template(); // uncomment if you want to use them ?>

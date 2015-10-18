@@ -1,3 +1,4 @@
+@import "bourbon";
 /******************************************************************
 Site Name:
 Author:
@@ -62,8 +63,17 @@ $white:             #fff;
 $bones-pink:        #f01d4f;
 $bones-blue:        #1990db;
 
-$link-color:        $bones-pink;
+$link-color:        $bones-blue;// $bones-pink;
 $link-hover:        darken($link-color, 9%);
+$bg-color:			#fff;
+
+/**********************
+RADIUS, BORDER & STUFF
+***********************/
+
+
+$b-radius: 			5px;
+$b-width: 			1px;
 
 /*
 Here's a great tutorial on how to
@@ -79,6 +89,15 @@ TYPOGRAPHY
 $sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
 
+
+/* hypenation */
+@mixin hyphens($value: auto) {
+	
+	-moz-hyphens: $value;
+  	-ms-hyphens: $value;
+  	-webkit-hyphens: $value;
+  	-hyphens: $value;
+}
 
 /* 	To embed your own fonts, use this syntax
 	and place your fonts inside the
@@ -248,3 +267,48 @@ BUTTONS
 		@include css-gradient( darken($bones-blue, 5%), $bones-blue );
 	}
 }
+
+/*** TWITTER BUTTONS **/
+.btn-primary {
+    background-color: #006DCC;
+    background-image: linear-gradient(to bottom, #0088CC, #0044CC);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.btn-small {
+    border-radius: 3px 3px 3px 3px;
+    font-size: 11.9px;
+    padding: 2px 10px;
+}
+.btn {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    display: inline-block;
+    line-height: 20px;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+a {
+    text-decoration: none;
+}
+* {
+    outline: medium none;
+}
+
+.twitterbtn {
+	@extend .btn-primary;
+	@extend .btn-small;
+	@extend .btn;
+
+}
+

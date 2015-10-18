@@ -10,13 +10,13 @@ possible. This is called at the top of the main stylsheet
 and will be used across all viewports.
 
 ******************************************************************/
-
+@import "bourbon";
 /*********************
 GENERAL STYLES
 *********************/
 
 body {
-	font-family: $serif;
+	font-family: $sans-serif;
 	font-size: 100%;
 	line-height: 1.5;
 	color: #565656;
@@ -150,9 +150,15 @@ h5, .h5 {
 HEADER SYTLES
 *********************/
 
-.header {}
+.header {
+	background-color: darken($bg-color, 20%);
+	background-image: url('../images/header.png');
+	background-repeat: no-repeat;
+	background-position: 1em 0.5em; 
+}
 
-	#logo {}
+	#logo {
+	}
 
 /*********************
 NAVIGATION STYLES
@@ -394,6 +400,23 @@ POSTS & CONTENT STYLES
 		.size-large {}
 		.size-medium {}
 		.size-thumbnail {}
+
+	/* MORE LINK */
+	.more-link {
+		@extend .twitterbtn;
+	}
+
+	.more, .comment-count {
+		max-width: 20%;
+		float: right;
+	}
+
+	.tags{
+		max-width: 80%;
+		float: left;
+		@include hyphens(none);
+	}
+
 
 /******************************************************************
 PAGE NAVI STYLES
@@ -779,7 +802,16 @@ COMMENT FORM STYLES
 SIDEBARS & ASIDES
 *********************/
 
-.sidebar {}
+.sidebar {
+	background: darken($bg-color, 5%);
+	@include border-top-radius($b-radius);
+	@include border-bottom-radius($b-radius);
+	@include border-left-radius($b-radius);
+	@include border-right-radius($b-radius);
+	border-style: solid;
+	border-width: $b-width;
+	border-color: darken($bg-color, 10%);
+}
 
 	.widgettitle {}
 
@@ -803,6 +835,10 @@ SIDEBARS & ASIDES
 		}
 
 	}
+
+	.hero-content {
+				display: none;
+			}
 
 /*********************
 FOOTER STYLES

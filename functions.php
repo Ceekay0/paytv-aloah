@@ -45,6 +45,13 @@ require_once('library/custom-post-type.php'); // you can disable this if you lik
 */
 // require_once('library/translation/translation.php'); // this comes turned off by default
 
+/*
+5. Register Custom Walker for Twitter Bootstrap
+*/
+
+// Register Custom Navigation Walker
+require_once('library/twitter_bootstrap_nav_walker.php');    
+
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes

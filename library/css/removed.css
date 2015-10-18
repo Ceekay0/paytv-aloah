@@ -1,0 +1,124 @@
+FROM 768 UP
+.nav {
+  background: #eee;
+  border: 0;
+  /* end .menu ul li */
+  /* highlight current page */
+  /* end current highlighters */ }
+  FROM 768    UP
+  . nav  li {
+    float: left;
+    position: relative;
+    /*
+    plan your menus and drop-downs wisely.
+    */
+    /* showing sub-menus */ }
+    FROM 768    UP
+    . nav  li a {
+      border-bottom: 0;
+      /*
+      you can use hover styles here even though this size
+      has the possibility of being a mobile device.
+      */ }
+      FROM 768    UP
+      . nav  li a:hover, FROM 768    UP
+      . nav  li a:focus {
+        background-color: #dedede; }
+    FROM 768    UP
+    . nav  li ul.sub-menu,
+    FROM 768    UP
+    . nav  li ul.children {
+      width: 200px;
+      border: 1px solid #ccc;
+      border-top: 0;
+      position: absolute;
+      display: none;
+      z-index: 8999;
+      /* highlight sub-menu current page */ }
+      FROM 768    UP
+      . nav  li ul.sub-menu li,
+      FROM 768    UP
+      . nav  li ul.children li {
+        /*
+        if you need to go deeper, go nuts
+        just remember deeper menus suck
+        for usability. k, bai.
+        */ }
+        FROM 768    UP
+        . nav  li ul.sub-menu li a,
+        FROM 768    UP
+        . nav  li ul.children li a {
+          padding-left: 10px;
+          border-right: 0;
+          display: block;
+          width: 180px;
+          border-bottom: 1px solid #ccc; }
+        FROM 768    UP
+        . nav  li ul.sub-menu li:last-child a,
+        FROM 768    UP
+        . nav  li ul.children li:last-child a {
+          border-bottom: 0; }
+    FROM 768    UP
+    . nav  li:hover ul {
+      top: auto;
+      display: block; }
+
+/* end .nav */
+/* FROM 486 */
+/* .menu is clearfixed inside mixins.scss */
+.menu {
+  /* end .menu ul */ }
+  .menu ul {
+    /* end .menu ul li */
+    /* highlight current page */
+    /* end current highlighters */ }
+    .menu ul li {
+      /*
+      plan your menus and drop-downs wisely.
+      */ }
+      .menu ul li a {
+        /*
+        you can use hover styles here even though this size
+        has the possibility of being a mobile device.
+        */ }
+
+/* end .menu */
+/* FROM BASE */
+	/*
+all navs have a .nav class applied via
+the wp_menu function; this is so we can
+easily write one group of styles for
+the navs on the site so our css is cleaner
+and more scalable.
+*/
+.nav {
+  border: 1px solid #ccc;
+  border-bottom: 0;
+  /* end .menu li */
+  /* highlight current page */
+  /* end current highlighters */ }
+  .nav li {
+    /*
+    so you really have to rethink your dropdowns for mobile.
+    you don't want to have it expand too much because the
+    screen is so small. How you manage your menu should
+    depend on the project. Here's some great info on it:
+    http://www.alistapart.com/articles/organizing-mobile/
+    */ }
+    .nav li a {
+      display: block;
+      text-decoration: none;
+      padding: 10px 10px;
+      background-color: #eee;
+      border-bottom: 1px solid #ccc;
+      /*
+      remember this is for mobile ONLY, so there's no need
+      to even declare hover styles here, you can do it in
+      the style.scss file where it's relevant. We want to
+      keep this file as small as possible!
+      */ }
+    .nav li ul.sub-menu li a,
+    .nav li ul.children li a {
+      padding-left: 30px; }
+
+/* end .nav */

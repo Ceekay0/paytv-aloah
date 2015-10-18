@@ -1,3 +1,4 @@
+@import "bourbon";
 /******************************************************************
 Site Name:
 Author:
@@ -18,6 +19,10 @@ GENERAL STYLES
 *********************/
 
 body {}
+
+#main{
+	margin-right: $onecol * 0.5;
+}
 
 /*********************
 LAYOUT & GRID STYLES
@@ -40,7 +45,7 @@ NAVIGATION STYLES
 *********************/
 
 .nav {
-	background: #eee;
+	// background: #eee;
 	border: 0;
 
 	li {
@@ -137,7 +142,8 @@ SIDEBARS & ASIDES
 *********************/
 
 .sidebar {
-	margin-top: 2.2em;
+	// margin-top: 2.2em;
+	margin-left: $onecol * 0.5;
 }
 
 	.widgettitle {
@@ -253,6 +259,43 @@ SIDEBARS & ASIDES
 	.textwidget {}
 	.widget_text {}
 	.textwidget p {}
+
+/*********************
+HERO UNITS
+*********************/
+
+	#hero-thumbs {
+				margin-left: 2.90055%;
+
+				}
+
+		.hero-content {
+					display: table;
+					height: 350px;
+					margin-left: 2.90055%;
+					margin-bottom: 1em;
+					// max-width: 14.364640883%;
+					// width: 14.364640883%;
+					// float: left;
+					// background: darken($bg-color, 5%);
+					@include border-top-radius($b-radius);
+					@include border-bottom-radius($b-radius);
+					@include border-left-radius($b-radius);
+					@include border-right-radius($b-radius);
+					border-style: solid;
+					border-width: $b-width;
+					border-color: darken($bg-color, 10%);
+
+						img{
+							max-width: 85%;
+							margin-top: 0.5em;
+							margin-left: auto;
+							margin-right: auto;	
+						}	
+
+					}
+
+		.hero-more{}
 
 
 /*********************
